@@ -110,7 +110,7 @@ int main(){
     else if(str[0]=='b' && str[1]=='n' && str[2]=='_'){
         cout<<"Boolean variable"<<endl;
     }
-    else if(isAllDigit() && Boolean_number()){
+    else if(isAllDigit() && Boolean_number() && str[0]=='0'){
         cout<<"Binary Number"<<endl;
     }
     else if(isAllDigit()&&(str[0]>='1'&&str[0]<='9')&&ln<=4){
