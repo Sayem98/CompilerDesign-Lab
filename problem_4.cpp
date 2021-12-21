@@ -1,53 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
+int main()
+{
+    int len,i,j;
+    string s,str;
+    str='E';
+    freopen("input4.txt","r",stdin);
 
-string grammar[] = {"E+E","E-E","E*E","E/E","(E)","a","b","c"};
-
-
-int Operator(char ch){
-    switch (ch)
+    getline(cin,s);
+    len=s.length();
+    cout<<"E"<<endl;
+    for(i=len-2;i>=0;i=i-2)
     {
-    case '+':
-        return 0;
-    case '-':
-        return 1;
-    case '*':
-        return 2;
-    case '/':
-        return 3;
-    case '(':
-        return 4;
-    default:
-        return -1;
-    }
-}
-
-
-int main(){
-    int i , j , len , index;
-    string str , ans;
-    freopen("input2.txt","r",stdin);
-    cin>>str;
-    len = str.size();
-    ans = "E";
-    cout<<ans<<endl;
-    
-    for(i = 0 ; i < len ; i++){
-
-        index = Operator(str[i]);
-        if(index != -1){
-            ans.pop_back();
-            ans += grammar[index];
-            cout<<ans<<endl;
+        if(s[i]=='+'||s[i]=='-'||s[i]=='*'||s[i]=='/')
+        {
+           str=s[i]+str;
+           str='E'+str;
+           cout<<str<<endl;
         }
     }
-    
-    for(i = ans.size() - 1; i >= 0 ; i--){
-        if(ans[i] == 'E'){
-            ans[i] = str[i];
-            cout<<ans<<endl;
-        }
+    for(i=0;i<len;i=i+2)
+    {
+       str[i]=s[i];
+       cout<<str<<endl;
     }
-
-    return 0;
 }
