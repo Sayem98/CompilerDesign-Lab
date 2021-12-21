@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int len,i,j,cnt=0,temp,temp2;
+    int len,i,j,cnt=0,temp1,temp2;
     string s;
     cout<<"Enter a string:"<<endl;
     freopen("input5.txt","r",stdin);
@@ -30,7 +30,7 @@ int main()
         }
         if(s[i]==')')
         {
-            temp=i;
+            temp1=i;
         }
         else if(s[i]=='('&&i+2<len)
         {
@@ -63,7 +63,7 @@ int main()
 
         }
     }
-    if(temp<temp2)
+    if(temp1!=temp2)
     {
         cout<<"Invalid"<<endl;
         return 0;
